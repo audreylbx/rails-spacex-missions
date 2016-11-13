@@ -1,5 +1,5 @@
 <%= simple_form_for [@planet, @mission] do |f| %>
   <%= f.input :description, label: 'Mission', placeholder: 'Send rations to survivors' %>
-  <%= f.association :spaceshift %>
+  <%= f.association :spaceshift, label: 'Spaceship' %>
   <%= f.button :submit, 'Update' %>
 <% end %>
