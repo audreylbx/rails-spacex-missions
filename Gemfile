@@ -39,8 +39,13 @@ gem 'autoprefixer-rails'
 # Faker gem
 gem 'faker', '~> 1.6', '>= 1.6.6'
 
-# Figaro security
+# Figaro security gem
 gem 'figaro'
+
+# Cloudinary gem
+gem 'cloudinary', '1.1.0'
+gem "attachinary", github: "assembler/attachinary"
+gem "jquery-fileupload-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
   root "planets#index"
   resources :planets, only: [:index, :show, :new, :create, :destroy]
 
