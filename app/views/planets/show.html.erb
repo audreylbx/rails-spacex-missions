@@ -1,6 +1,7 @@
 <div class="container">
 
   <h1>Exploration time ✨</h1>
+  <%= cl_image_tag @planet.photos.first.path, width: 100, height: 100, crop: :fill, radius: :max, :class=>"planet-image" %>
 
   <div class="mission-list">
     <h2>Here are the next missions to explore planet <%= @planet.name %>:</h2>
