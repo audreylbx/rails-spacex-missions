@@ -1,7 +1,28 @@
 <div class="container">
-  <h1>Planets of the Milky Way 🌝</h1>
-  <div class="row">
-  <%= planets.each do |planet| %>
-    <% if %>
-  </div>
+  <h1>Let's explore the Milky Way 🌝</h1>
+    <div class="row">
+      <% @planets.each do |planet| %>
+        <% if planet.photos.any? %>
+          <div class="col-xs-12 col-sm-4">
+            <%= link_to planet_path(planet), {:class=>"card-link"} do  %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path planet.photos.first.path, height: 300, width: 400, crop: :fill %>')">
+                <div class="card-description">
+                  <p><%= planet.name  %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="col-xs-12 col-sm-4">
+            <%= link_to planet_path(planet), {:class=>"card-link"} do  %>
+              <div class="card" style="background-color: #dddbd7">
+                <div class="card-description">
+                  <p><%= planet.name  %></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 </div>

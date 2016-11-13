@@ -1,0 +1,19 @@
+.card {
+  height: 175px;
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.card-description {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.card-description {
+  color: #DCA83A;
+  font-weight: bold;
+}

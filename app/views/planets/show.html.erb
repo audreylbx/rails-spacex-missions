@@ -1,2 +1,28 @@
-<h1>Planets#show</h1>
-<p>Find me in app/views/planets/show.html.erb</p>
+<div class="container">
+
+  <h1>Exploration time ✨</h1>
+
+  <div class="mission-list">
+    <h2>Here are the next missions to explore planet <%= @planet.name %>:</h2>
+    <% if @planet.missions.any? %>
+      <ol>
+        <% @planet.missions.each do |mission| %>
+          <li><%= mission.description %> with <%= mission.spaceshift.name %> | <%= link_to "Delete", planet_mission_path(@planet, mission), method: :delete, data: {confirm: "Are you sure you want to delete this mission?"} %></li>
+        <% end %>
+      </ol>
+    <% else %>
+      <p>There are no missions yet !</p>
+    <% end %>
+  </div>
+
+  <div class="form">
+    <p>🚀 Add a new mission</p>
+    <%= render 'missions/form_mission' %>
+  </div>
+
+  <div class="form">
+    <p>📸 Upload a picture for this planet</p>
+    <%= render 'form_picture' %>
+  </div>
+
+</div>
