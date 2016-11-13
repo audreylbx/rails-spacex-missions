@@ -1,5 +1,5 @@
 class PlanetsController < ApplicationController
-  before_action :set_planet, only: [:show, :destroy]
+  before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
   def index
     @planets = Planet.all
@@ -20,6 +20,14 @@ class PlanetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @planet.update(planet_params)
+    redirect_to @planet
   end
 
   def destroy
